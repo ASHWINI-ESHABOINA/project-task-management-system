@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Minimal global defaults (Tailwind-first) */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #020617;
+  color: #e2e8f0;
+}
+
+@layer components {
+  .ui-input {
+    @apply mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/90 px-3 py-2 text-sm text-slate-100 placeholder:text-zinc-500 outline-none transition focus:border-indigo-400/70 focus:ring-2 focus:ring-indigo-400/25 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .ui-select {
+    @apply mt-2 w-full appearance-none rounded-2xl border border-white/10 bg-slate-900/90 px-3 py-2 pr-9 text-sm text-slate-100 placeholder:text-zinc-500 outline-none transition focus:border-indigo-400/70 focus:ring-2 focus:ring-indigo-400/25 disabled:cursor-not-allowed disabled:opacity-60;
+    background-image: linear-gradient(45deg, transparent 50%, #cbd5e1 50%),
+      linear-gradient(135deg, #cbd5e1 50%, transparent 50%);
+    background-position: calc(100% - 16px) calc(50% - 3px), calc(100% - 11px) calc(50% - 3px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    color-scheme: dark;
+  }
+
+  .ui-select option {
+    background-color: #0f172a;
+    color: #e2e8f0;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
