@@ -38,8 +38,8 @@ Create a `.env` file (you can start from `.env.example`):
 |---|---:|---|---|
 | `NODE_ENV` | no | `development` | `production` hides stack traces |
 | `PORT` | no | `5000` | API port |
-| `MONGO_URI` | yes | `mongodb://127.0.0.1:27017/team_task_manager` | MongoDB connection string |
-| `CORS_ORIGINS` | no | `http://localhost:5173,http://localhost:3000` | Comma-separated allowlist. Empty = allow all origins |
+| `MONGO_URI` | yes | `mongodb+srv://<username>:<password>@<cluster>/<db>?retryWrites=true&w=majority` | MongoDB Atlas connection string |
+| `CORS_ORIGINS` | no | `https://your-frontend.vercel.app` | Comma-separated allowlist. Empty = allow all origins |
 | `JWT_SECRET` | yes | `change_me_to_a_long_random_string` | Use a long random secret in production |
 | `JWT_EXPIRES_IN` | no | `7d` | Token lifetime |
 
@@ -58,7 +58,7 @@ npm run dev
 npm start
 ```
 
-Server starts on: `http://localhost:<PORT>`
+Server starts on: `http://<railway-domain>:<PORT>`
 
 ---
 
@@ -117,7 +117,7 @@ Notes:
 Request:
 
 ```bash
-curl -X POST "http://localhost:5000/api/auth/login" ^
+curl -X POST "https://<railway-domain>/api/auth/login" ^
   -H "Content-Type: application/json" ^
   -d "{\"email\":\"admin@example.com\",\"password\":\"Password123\"}"
 ```
@@ -143,7 +143,7 @@ Response (example):
 Request:
 
 ```bash
-curl -X POST "http://localhost:5000/api/projects" ^
+curl -X POST "https://<railway-domain>/api/projects" ^
   -H "Content-Type: application/json" ^
   -H "Authorization: Bearer <token>" ^
   -d "{\"title\":\"Website Redesign\",\"description\":\"Q2 initiatives\"}"

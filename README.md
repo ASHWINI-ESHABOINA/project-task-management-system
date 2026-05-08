@@ -100,4 +100,4 @@ team-task-manager/
 ## Notes
 
 - Ensure backend and frontend are both running during local development.
-- API base URL is configured in frontend Vite environment (`VITE_API_URL`) or defaults to `http://localhost:5000/api`.
+- API base URL is configured in frontend Vite environment (`VITE_API_URL`).
