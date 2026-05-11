@@ -7,7 +7,7 @@ dotenv.config();
 const { createApp } = require("./app");
 const { connectDB } = require("./config/db");
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 async function start() {
   try {
@@ -22,6 +22,8 @@ async function start() {
 
     // 3. Create HTTP server
     const server = http.createServer(app);
+    
+    console.log("RAILWAY PORT:", process.env.PORT);
 
     // 4. Start server (IMPORTANT: bind to 0.0.0.0 for Railway)
     server.listen(PORT, "0.0.0.0", () => {
